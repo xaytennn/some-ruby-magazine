@@ -1,0 +1,15 @@
+    default: &default
+      adapter: postgresql
+      encoding: unicode
+      pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+      passwprd: 1111
+      host: localhost
+      port: 3000
+
+      development:
+        <<: *default
+        database: cat_shop_development
+
+        test:
+          <<: *default
+          database: cat_shop_test
