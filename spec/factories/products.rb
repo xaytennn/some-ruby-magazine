@@ -4,7 +4,7 @@ FactoryBot.define do
     brand_id          { rand(1..5) }
     title             { Faker::Lorem.word.camelcase }
     bytitle           { title.downcase }
-    img               { 'p-1'.png }
+    img               { 'p-1.png' }
     content           { Faker::Lorem.sentence(word_count: 10) }
     keywords          { title.downcase }
     description       { content }

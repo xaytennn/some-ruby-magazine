@@ -1,16 +1,16 @@
 #frozen_string_literal: true
 
-require 'rails_helper'
+require_relative '../rails_helper'
 
 RSpec.describe MainController, type: :controller do
   describe 'GET #index' do
-    let(:brands){ create_list :brand, 3}
-    let (:hits){ create_list :product, 8}
+    let(:brands) { create_list :brand, 3 }
+    let (:hits) { create_list :product, 8 }
 
     before { get :index }
     context 'required output per page' do
       it 'render to index template' do
-        is.expected.to render_template :index
+        is_expected.to render_template :index
       end
       it 'instance var brands include only brand' do
         expect(assigns(:brands)).to match_array(brands)
