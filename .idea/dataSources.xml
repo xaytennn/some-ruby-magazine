@@ -13,5 +13,11 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/cat_shop_test</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="development" uuid="5516ba9e-00a8-4452-8a53-29a98b7e810e">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\Vladislav\Documents\GitHub\some-ruby-magazine\db\development.sqlite3</jdbc-url>
+    </data-source>
   </component>
 </project>
