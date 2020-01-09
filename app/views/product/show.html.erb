@@ -13,7 +13,7 @@
 
 <!--start-single-->
 <div class="single contact">
-  <div class="conainer">
+  <div class="container">
     <div class="single-main">
       <div class="col-md-9 single-main-left">
         <div class="sngl-top">
@@ -50,7 +50,7 @@
               </div>
 
               <h5 class="item_price">$ <%= @product.price %> </h5>
-              <% if @product.old_price then %>
+              <% if @product.old_price %>
                 <del><%= @product.old_price %></del>
               <% end %>
               <p><%= @product.content %></p>
@@ -84,7 +84,7 @@
                   </strong>
                 </li>
               </ul>
-              <div class="quanity">
+              <div class="quantity">
                 <input type="number" name="quantity" value="1" size="4" min="1" step="1">
               </div>
             </div>
@@ -143,14 +143,15 @@
             <% @product.related.each do |related| %>
               <div class="col-md-4 product-left p-left">
                 <div class="product-main simpleCart_shelfItem">
-                  <a href="<%=related.id %>" class="mask">
+                  <a href="<%= related.id %>" class="mask">
                     <img class="img-responsive zoom-img" src="<%= asset_path related.img %>" alt="">
                   </a>
                   <div class="product-bottom">
-                    <h3><a href="<%= ralated.id %>"><%= related.title %></a></h3>
+                    <h3><a href="<%= related.id %>"><%= related.title %></a></h3>
                     <p>Explore Now</p>
                     <h4>
-                      <a class="item_add add-to-cart-link" href="cart/add?id=<%=related.id %>" data-id="<%=related.id %>"><i></i></a>
+                      <a class="item_add add-to-cart-link" href="cart/add?id=<%= related.id %>" data-id="<%= related.id %>"><i></i>
+                      </a>
                       <span class=" item_price">$ <%= related.price %></span>
                       <% if related.old_price %>
                         <del><%= related.old_price %></del>
@@ -178,11 +179,11 @@
               <% recent_products.each do |recently| %>
                 <div class="col-md-4 product-left p-left">
                   <div class="product-main simpleCart_shelfItem">
-                    <a href="<%=recently.id %>" class="mask">
+                    <a href="<%= recently.id %>" class="mask">
                       <img class="img-responsive zoom-img" src="<%= asset_path recently.img %>" alt="">
                     </a>
                     <div class="product-bottom">
-                      <h3><a href="<%=recently.id %>"><%= recently.title %></a></h3>
+                      <h3><a href="<%= recently.id %>"><%= recently.title %></a></h3>
                       <p>Explore Now</p>
                       <h4>
                         <a class="item-add add-to-cart-link" href="cart/add?id=<%=recently.id %>" data-id="<%=recently.id %>"><i></i></a>

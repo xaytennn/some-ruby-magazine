@@ -1,7 +1,7 @@
 class CreateRelatedProducts < ActiveRecord::Migration[6.0]
   def change
     #drop_table :related_products
-    unless ActiveRecord::Base.connection.tables.include?("related_products")
+    #unless ActiveRecord::Base.connection.tables.include?("related_products")
       create_table :related_products, id: false do |t|
         t.integer :product_id
         t.integer :related_id
@@ -23,5 +23,5 @@ class CreateRelatedProducts < ActiveRecord::Migration[6.0]
       SQL
     end
   end
-end
+#end
 
