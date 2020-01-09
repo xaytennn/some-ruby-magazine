@@ -1735,7 +1735,7 @@ ul {
     color: #fff;
     text-transform: uppercase;
     font-size: 14px;
-	text-decoration:none;
+		text-decoration:none;
 }
 .menu_drop ul li a {
 	background: #fff;
@@ -1753,6 +1753,34 @@ ul {
 .menu_drop > li > a:hover, .menu > li > a.active {
 	background:#73b6e1;
 	text-decoration:none;
+}
+
+.menu_drop ul li {
+	padding-top: 15px;
+	background-color: #fff;
+}
+.menu_drop ul li:last-child {
+	padding-bottom: 25px;
+	background-color: #fff;
+}
+.menu_drop .item1 ul,
+.menu_drop .item2 ul,
+.menu_drop .item3 ul,
+.menu_drop .item4 ul,
+.menu_drop .item5 ul  {
+	display: none;
+}
+.menu_drop .item1:hover ul,
+.menu_drop .item2:hover ul,
+.menu_drop .item3:hover ul,
+.menu_drop .item4:hover ul,
+.menu_drop .item5:hover ul,
+.menu_drop .item1 ul:hover,
+.menu_drop .item2 ul:hover,
+.menu_drop .item3 ul:hover,
+.menu_drop .item4 ul:hover,
+.menu_drop .item5 ul:hover {
+	display: block;
 }
 .m_4{
 	margin:3em 0 1em;
