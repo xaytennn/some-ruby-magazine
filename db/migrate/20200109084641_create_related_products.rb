@@ -1,11 +1,13 @@
 class CreateRelatedProducts < ActiveRecord::Migration[6.0]
   def change
-    create_table :related_products, id: false do |t|
-      t.integer :product_id
-      t.integer :related_id
-    end
+    #drop_table :related_products
+    unless ActiveRecord::Base.connection.tables.include?("related_products")
+      create_table :related_products, id: false do |t|
+        t.integer :product_id
+        t.integer :related_id
+      end
 
-    insert <<-SQL.squish
+      insert <<-SQL.squish
             INSERT INTO related_products
             (product_id , related_id)
             VALUES
@@ -17,7 +19,9 @@ class CreateRelatedProducts < ActiveRecord::Migration[6.0]
             (6, 4),(6, 1),(6, 2),
             (7, 4),(7, 1),(7, 2),
             (8, 4),(8, 1),(8, 2),
-            (9, 4),(9, 1),(9, 2),
-    SQL
+            (9, 4),(9, 1),(9, 2)
+      SQL
+    end
   end
 end
+

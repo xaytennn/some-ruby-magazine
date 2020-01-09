@@ -31,11 +31,6 @@
         </introspection-scope>
       </schema-mapping>
     </data-source>
-    <data-source name="development" uuid="5516ba9e-00a8-4452-8a53-29a98b7e810e">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="SQLITE" exact-version="0" />
-      <auth-required>false</auth-required>
-      <schema-mapping />
-    </data-source>
     <data-source name="Rails some-ruby-magazine: development" uuid="43ff6df9-ada2-46e1-9909-412ad1b99bdd">
       <database-info product="SQLite" version="3.25.1" jdbc-version="2.1" driver-name="SQLite JDBC" driver-version="3.25.1" dbms="SQLITE" exact-version="3.25.1" exact-driver-version="3.25">
         <identifier-quote-string>&quot;</identifier-quote-string>
