@@ -19,7 +19,7 @@
       <imported>true</imported>
       <remarks>$PROJECT_DIR$/config/database.yml</remarks>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\Vladislav\Documents\GitHub\some-ruby-magazine\db\development.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/development.sqlite3</jdbc-url>
     </data-source>
     <data-source source="LOCAL" name="Rails some-ruby-magazine: test" uuid="8fdef7d0-0338-4671-a27a-a15d5ccf740e">
       <driver-ref>sqlite.xerial</driver-ref>
@@ -27,7 +27,7 @@
       <imported>true</imported>
       <remarks>$PROJECT_DIR$/config/database.yml</remarks>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\Vladislav\Documents\GitHub\some-ruby-magazine\db\test.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:sqlite:C:\Users\gaynu\Documents\GitHub\some-ruby-magazine-3\db\test.sqlite3</jdbc-url>
     </data-source>
   </component>
 </project>
