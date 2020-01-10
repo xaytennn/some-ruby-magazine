@@ -115,6 +115,8 @@ GEM
       zeitwerk (~> 2.2)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    ancestry (3.0.7)
+      activerecord (>= 3.2.0)
     ast (2.4.0)
     autoprefixer-rails (9.7.3)
       execjs
@@ -323,6 +325,7 @@ PLATFORMS
 
 DEPENDENCIES
   activestorage
+  ancestry
   bootsnap (>= 1.4.2)
   bootstrap-sass
   breadcrumbs_on_rails
