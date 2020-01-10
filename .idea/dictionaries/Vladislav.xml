@@ -11,21 +11,30 @@
       <w>clearfix</w>
       <w>easydrop</w>
       <w>easydropdown</w>
+      <w>fastrack</w>
       <w>flexs</w>
       <w>flexslider</w>
       <w>imagezoom</w>
       <w>jbuilder</w>
+      <w>kurtas</w>
       <w>launchy</w>
       <w>lorem</w>
+      <w>maxima</w>
       <w>memenu</w>
+      <w>mepanel</w>
       <w>mystyle</w>
+      <w>omax</w>
+      <w>prdt</w>
       <w>responsiveslides</w>
       <w>rubocop</w>
       <w>shoulda</w>
+      <w>shree</w>
+      <w>srch</w>
       <w>turbolinks</w>
       <w>uglifier</w>
       <w>webdrivers</w>
       <w>webpacker</w>
+      <w>yepme</w>
     </words>
   </dictionary>
 </component>
