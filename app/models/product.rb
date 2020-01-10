@@ -2,6 +2,7 @@ class Product < ApplicationRecord
   validates :title, presence: true
   validates :price, presence: true
 
+  has_many :galleries
   belongs_to :category
 
   has_many :related_products
