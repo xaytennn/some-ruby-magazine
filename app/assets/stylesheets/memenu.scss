@@ -184,27 +184,16 @@
 }
 
 
-.memenu li .row,
-.memenu > li > .mepanel {
+.memenu li .row {
   display: none;
 }
 
 .memenu > li > .mepanel {
-  top: 30px;
-  transition: background .5s linear 2s;
+  top: 20px;
+  display: none;
 }
 
-.memenu > li:hover > .mepanel {
-  display: block;
-}
-.mepanel::after {
-  // display: block;
-  transition: background .5s linear 2s;
-}
-.memenu > li > .mepanel:hover {
-  display: block;
-}
-
+.memenu > li:hover > .mepanel,
 .memenu li:hover .row {
   display: block;
 }
