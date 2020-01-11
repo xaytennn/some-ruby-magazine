@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.5'
 
 gem 'ancestry', require: true
+gem 'devise'
 
 gem 'breadcrumbs_on_rails'
 gem 'meta-tags'
