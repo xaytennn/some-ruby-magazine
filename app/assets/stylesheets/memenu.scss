@@ -7,17 +7,6 @@
     position: relative;
     font-size: 15px;
 }
-
-
-.memenu li .row {
-  display: none;
-}
-
-.memenu li:hover .row {
-  background-color: #3f3f00;
-  display: block;
-}
-
 .memenu li{
 	display:inline-block;
 }
@@ -192,4 +181,30 @@
 	.mepanel .row [class*="col"]{float:none;display:block;width:100%;margin-left:0;margin-top:15px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
 	.mepanel .row:first-child [class*="col"]:first-child{margin-top:0}
 	.mepanel .row{margin-top:0}.black{background:#222}
+}
+
+
+.memenu li .row,
+.memenu > li > .mepanel {
+  display: none;
+}
+
+.memenu > li > .mepanel {
+  top: 30px;
+  transition: background .5s linear 2s;
+}
+
+.memenu > li:hover > .mepanel {
+  display: block;
+}
+.mepanel::after {
+  // display: block;
+  transition: background .5s linear 2s;
+}
+.memenu > li > .mepanel:hover {
+  display: block;
+}
+
+.memenu li:hover .row {
+  display: block;
 }
