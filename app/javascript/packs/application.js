@@ -17,6 +17,8 @@
 //= require jquery.flexslider
 //= require flexs
 //= require my
+// //= require jquery
+// //= require jquery_ujs
 
 
 
