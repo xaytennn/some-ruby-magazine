@@ -13,35 +13,37 @@
   <div class="container">
     <div class="prdt-top">
       <div class="col-md-12">
-        <div class="product-one heading">
-          <h2>Registration</h2>
-        </div>
+        <div class="product-one signup">
+          <div class="register-top heading">
+            <h2>Registration</h2>
+          </div>
 
-        <div class="register-main">
-          <div class="col-md-6 account-left">
-            <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|  %>
-              <%= f.error_notification %>
-              <div class="form-group has-feedback">
-                <%= f.input :email,
-                            required: true,
-                            autofocus: true,
-                            input_html: {autocomplete: "email", class: "form-control", placeholder: "Email"}
-                %></div>
+          <div class="register-main">
+            <div class="col-md-6 account-left">
+              <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|  %>
+                <%= f.error_notification %>
                 <div class="form-group has-feedback">
-                  <%= f.input :password,
+                  <%= f.input :email,
                               required: true,
-                              hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                              input_html: {autocomplete: "new-password", class: "form-control", placeholder: "Password"}
-                %></div>
-                <div class="form-group has-feedback">
-                  <%= f.input :password_confirmation,
-                              required: true,
-                              input_html: {autocomplete: "new-password", class: "form-control", placeholder: "Password"}
+                              autofocus: true,
+                              input_html: {autocomplete: "email", class: "form-control", placeholder: "Email"}
+                  %></div>
+                  <div class="form-group has-feedback">
+                    <%= f.input :password,
+                                required: true,
+                                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                                input_html: {autocomplete: "new-password", class: "form-control", placeholder: "Password"}
+                  %></div>
+                  <div class="form-group has-feedback">
+                    <%= f.input :password_confirmation,
+                                required: true,
+                                input_html: {autocomplete: "new-password", class: "form-control", placeholder: "Password"}
 
-                %></div>
-                <%= f.button :submit, "Sign up", class: "btn btn-default" %>
-              <% end %>
-              <p><%= render "devise/shared/links"%></p>
+                  %></div>
+                  <%= f.button :submit, "Sign up", class: "btn btn-default" %>
+                <% end %>
+                <p><%= render "devise/shared/links"%></p>
+            </div>
           </div>
         </div>
       </div>
