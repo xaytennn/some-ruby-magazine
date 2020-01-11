@@ -5,6 +5,7 @@ ruby '2.6.5'
 
 gem 'ancestry', require: true
 gem 'devise'
+gem 'simple_form'
 
 gem 'breadcrumbs_on_rails'
 gem 'meta-tags'

@@ -163,3 +163,8 @@ form .has-error .form-control{
   top:50vh;
   margin:-100px 0 0 -100px;
 }
+
+.btn-group:hover .dropdown-menu {
+  top: 13px;
+  display: block;
+}
