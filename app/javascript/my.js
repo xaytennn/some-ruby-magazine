@@ -45,7 +45,7 @@ $('body').on('click', '.add-to-cart-link', function(e) {
   $.ajax({
     beforeSend: function(xhr) { xhr.setRequestHeader('X-CSRF-Token',
       $('meta[name="csrf-token"]').attr('content'))},
-        url: "cart/items",
+        url: "/cart/items",
       //url: $(this).attr('href'),
       data: { product_id: product_id, quantity: quantity, mod: mod },
     type: 'POST',
