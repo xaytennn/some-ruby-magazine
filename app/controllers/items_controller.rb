@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   include CartsHelper
   layout false
+  
   def create
     cart_items.create(item_params)
   end
