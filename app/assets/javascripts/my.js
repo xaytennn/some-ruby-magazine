@@ -45,8 +45,9 @@ $('body').on('click', '.add-to-cart-link', function(e) {
   $.ajax({
     beforeSend: function(xhr) { xhr.setRequestHeader('X-CSRF-Token',
       $('meta[name="csrf-token"]').attr('content'))},
-    url: 'cart/items',
-    data: { product_id: product_id, quantity: quantity, mod: mod },
+        url: "cart/items",
+      //url: $(this).attr('href'),
+      data: { product_id: product_id, quantity: quantity, mod: mod },
     type: 'POST',
     success: function(res) {
       showCart(res);
@@ -86,7 +87,7 @@ function showCart(cart) {
   if ($('.cart-sum').text()) {
     $('.simpleCart_total').html($('#cart .cart-sum').text());
   } else {
-    $('.simpleCart_total').text('Empty Cart'));
+    $('.simpleCart_total').text('Empty Cart');
   }
 }
 
@@ -105,17 +106,17 @@ function getCart() {
 }
 
 function showCartEmpty() {
-  var result = { error: 'Please sign in! To view the cart.' };
+  var result = { error: 'Please sign in! To view the cart.' }
   var modal = $('#cart').modal();
   $('#cart .modal-footer a, #cart .modal-footer .btn-danger').css('display', 'none');
-  modal.fine('.modal-body').html(result.error);
+  modal.find('.modal-body').html(result.error);
 }
 
 function clearCart() {
   $.ajax({
     url: '/cart/',
     method: 'delete',
-    tupe: 'POST',
+    type: 'POST',
 
     success: function(res) {
       showCart(res);
