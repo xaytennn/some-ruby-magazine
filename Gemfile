@@ -43,6 +43,7 @@ group :development, :test do
   gem 'rspec-mocks', git: 'https://github.com/rspec/rspec-mocks', branch: 'master'
   gem 'rspec-expectations', git: 'https://github.com/rspec/rspec-expectations', branch: 'master'
   gem 'rspec-support', git: 'https://github.com/rspec/rspec-support', branch: 'master'
+  # gem 'rspec'
   # gem 'rspec-core'
   # gem 'rspec-mocks'
   # gem 'rspec-support'

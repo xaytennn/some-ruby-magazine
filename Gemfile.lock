@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: https://github.com/rspec/rspec-core
-  revision: 0d27b29083a6969ed4d3b386b71c0f6d4571c04d
+  revision: 7a264e98d255708a766dc77e63a328f18c19dd9b
   branch: master
   specs:
     rspec-core (3.10.0.pre)
@@ -36,7 +36,7 @@ GIT
 
 GIT
   remote: https://github.com/rspec/rspec-rails
-  revision: 64b2712da9d12c03a582bb26b62337504f8d1b76
+  revision: 335afc6d78c18702250141da58212cf265a79f90
   branch: master
   specs:
     rspec-rails (4.0.0.pre)
@@ -50,7 +50,7 @@ GIT
 
 GIT
   remote: https://github.com/rspec/rspec-support
-  revision: 596198a74e6942fb9de253e590aaa71e1bf3b9d4
+  revision: b83b4cecb3bb56300addae89cb0c437f1af906fb
   branch: master
   specs:
     rspec-support (3.10.0.pre)
