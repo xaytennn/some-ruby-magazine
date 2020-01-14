@@ -8,7 +8,7 @@ RSpec.describe ItemsController, type: :controller do
   let(:user)        { create :user}
   let(:product)        { create :product}
   let(:cart)        { create :cart, user: user}
-  let(:item)        { create :cart_item, cart: cart, product: product}
+  let!(:item)        { create :cart_item, cart: cart, product: product}
   let(:create_params)        { { quantity: 1, product_id: product.id } }
 
   describe 'POST #create' do
