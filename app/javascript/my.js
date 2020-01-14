@@ -5,7 +5,7 @@ $.ajaxSetup({
 });
 
 /* Search */
-var product = new Bloodhound({
+var products = new Bloodhound({
     datumTokenizer: Bloodhound.tokenizers.whitespace,
     queryTokenizer: Bloodhound.tokenizers.whitespace,
     remote: {
@@ -14,8 +14,8 @@ var product = new Bloodhound({
     }
 });
 
-product.initialize();
-$("typeahead").typeahead({
+products.initialize();
+$("#typeahead").typeahead({
     highlight: true
 },{
     name: 'products',
@@ -24,8 +24,9 @@ $("typeahead").typeahead({
     source: products
 });
 
-$("typeahead").bind('typeahead:select', function(ev, suggestion) {
-    window.location = '/product' + encodeURIComponent(suggestion.id)
+$('#typeahead').bind('typeahead:select', function(ev, suggestion) {
+    window.location = '/product/' + encodeURIComponent(suggestion.id);
+    // console.log(suggestion.name);
 });
 
 /* CART */
@@ -45,7 +46,7 @@ $('body').on('click', '.add-to-cart-link', function(e) {
   $.ajax({
     beforeSend: function(xhr) { xhr.setRequestHeader('X-CSRF-Token',
       $('meta[name="csrf-token"]').attr('content'))},
-        url: "/cart/items",
+        url: "/cart_items",
       //url: $(this).attr('href'),
       data: { product_id: product_id, quantity: quantity, mod: mod },
     type: 'POST',

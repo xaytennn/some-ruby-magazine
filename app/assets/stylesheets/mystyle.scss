@@ -168,3 +168,10 @@ form .has-error .form-control{
   top: 13px;
   display: block;
 }
+
+.typeahead::selection{
+  width: 200px;
+  height: 200px;
+  display: block;
+  background-color: red;
+}
