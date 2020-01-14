@@ -31,7 +31,7 @@
                 <li><%= link_to 'Edit', edit_user_registration_path, style: "color: #000; text-align: center;" %></li>
                 <li><%= button_to 'Sign out', destroy_user_session_path, method: :delete, style: "color: #000; width: 100%; border: none; background: #fff; text-align: center;" %></li>
 
-            <% else %>
+              <% else %>
                 <li><%= link_to 'Sign in', new_user_session_path, style: "color: #000; text-align: center;" %></li>
                 <li><%= link_to 'Registration', new_user_registration_path, style: "color: #000; text-align: center;" %></li>
               <% end %>
@@ -47,10 +47,13 @@
             <div class="total">
               <%= image_tag('cart-1.png', alt: "") %>
               <% if cart_items.any?  %>
-                <span class="simpleCart_total"><%= format("%.2f", cart_total) %> $</span>
+                <span class="simpleCart_total">
+                  <%= format("%.2f", cart_total) %> $
+                </span>
               <% else %>
                 <span class="simpleCart_total">Empty cart</span>
               <% end %>
+
             </div>
           </a>
           <div class="clearfix"></div>

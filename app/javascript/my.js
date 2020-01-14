@@ -18,10 +18,10 @@ products.initialize();
 $("#typeahead").typeahead({
     highlight: true
 },{
-    name: 'products',
-    display: 'title',
-    limit: 10,
-    source: products
+  name: 'products',
+  display: 'title',
+  limit: 10,
+  source: products
 });
 
 $('#typeahead').bind('typeahead:select', function(ev, suggestion) {
@@ -46,7 +46,7 @@ $('body').on('click', '.add-to-cart-link', function(e) {
   $.ajax({
     beforeSend: function(xhr) { xhr.setRequestHeader('X-CSRF-Token',
       $('meta[name="csrf-token"]').attr('content'))},
-        url: "/cart_items",
+        url: "/cart/items",
       //url: $(this).attr('href'),
       data: { product_id: product_id, quantity: quantity, mod: mod },
     type: 'POST',
@@ -63,7 +63,7 @@ $('#cart .modal-body').on('click', '.del-item', function() {
   var id = $(this).data('id');
   $.ajax({
     beforeSend: function(xhr) { xhr.setRequestHeader('X-CSRF-Token',
-      $('meta[name="csrf-token"]').attr('content'))},
+        $('meta[name="csrf-token"]').attr('content'))},
     url: "/cart/items/"+id,
     data: { id: id },
     method: 'delete',
@@ -96,7 +96,6 @@ function getCart() {
   $.ajax({
     url: '/cart',
     type: 'GET',
-
     success: function(res) {
       showCart(res);
     },
@@ -118,12 +117,11 @@ function clearCart() {
     url: '/cart/',
     method: 'delete',
     type: 'POST',
-
     success: function(res) {
       showCart(res);
     },
     error: function() {
       alert('Error!');
-    }
+    },
   });
 }
