@@ -25,7 +25,7 @@
           </td>
           <td><%= link_to(item.product.title, item.product) %></td>
           <td>
-            <% qty << item.product.title %><%= item.quantity %>шт.
+            <% qty << item.quantity %><%= item.quantity %>шт.
           </td>
           <% pr = item.quantity * item.product.price %>
           <% sum << pr %>
@@ -51,6 +51,6 @@
     <h3>Cart is Empty</h3>
   <% end %>
 <% else %>
-<span>Please sign in to view the cart.</span>
+<span>Please sign in! to view the cart.</span>
 <script>$('#cart .modal-footer a, #cart .modal-footer .btn-danger').css('display','none');</script>
 <% end %>

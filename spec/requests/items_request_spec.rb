@@ -1,7 +1,10 @@
+
+
 require 'rails_helper'
 
 RSpec.describe ItemsController, type: :controller do
   render_views
+
   let(:user)        { create :user}
   let(:product)        { create :product}
   let(:cart)        { create :cart, user: user}
@@ -22,6 +25,7 @@ RSpec.describe ItemsController, type: :controller do
         is_expected.to render_template :create
       end
     end
+
     context 'with invalid attributes' do
       let(:create_params) { { quantity: 0 } }
 

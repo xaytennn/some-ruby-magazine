@@ -16,5 +16,6 @@ class ItemsController < ApplicationController
     params.permit(:product_id, :quantity)
   end
 
+
   helper_method :products
 end

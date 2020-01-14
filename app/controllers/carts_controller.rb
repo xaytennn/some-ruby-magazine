@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-  # include CartsHelper
+  include CartsHelper
   layout false
 
   # def show; end
