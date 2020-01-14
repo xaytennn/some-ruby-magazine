@@ -16,7 +16,7 @@
 //= require imagezoom
 //= require jquery.flexslider
 //= require flexs
-//= require my
+// =require my
 //= require jquery
 //= require jquery_ujs
 

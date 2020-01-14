@@ -6,20 +6,20 @@
           <li class="active"><a href="/">Home</a> </li>
 
           <% Category.roots.each do |category| %>
-          <% cache category do %>
-            <li class="grid">
-              <%= link_to category.title, "/category/#{category.id}" %>
-              <% if category.children.present? %>
-              <div class="mepanel">
-                <div class="row">
-                  <div class="col1 me-one">
-                    <%= render 'include/menu/menu', category: category, cached: true %>
+            <% cache category do %>
+              <li class="grid">
+                <%= link_to category.title, "/category/#{category.id}" %>
+                <% if category.children.present? %>
+                  <div class="mepanel">
+                    <div class="row">
+                      <div class="col1 me-one">
+                        <%= render 'include/menu/menu', category: category, cached: true %>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
                 <% end %>
-            </li>
-          <% end %>
+              </li>
+            <% end %>
           <% end %>
 
         </ul>

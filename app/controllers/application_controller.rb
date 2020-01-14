@@ -1,8 +1,8 @@
 class ApplicationController < ActionController::Base
   def current_cart
     @current_cart ||= begin
-                        Cart.find_or_create_by(user: current_user)
-                      end
+      Cart.find_or_create_by(user: current_user)
+    end
   end
 
   def cart_items
@@ -12,8 +12,7 @@ class ApplicationController < ActionController::Base
   def cart_total
     return 0 if cart_items.none?
 
-    cart_items
-        .joins(:product)
+    cart_items.joins(:product)
         .select('(cart_items.quantity * products.price) as total')
         .sum { |x| x[:total] }
   end

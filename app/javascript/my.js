@@ -6,15 +6,16 @@ $.ajaxSetup({
 
 /* Search */
 var products = new Bloodhound({
-    datumTokenizer: Bloodhound.tokenizers.whitespace,
-    queryTokenizer: Bloodhound.tokenizers.whitespace,
-    remote: {
-        wildcard: '%QUERY',
-        url: '/search?query=%QUERY'
-    }
+  datumTokenizer: Bloodhound.tokenizers.whitespace,
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  remote: {
+      wildcard: '%QUERY',
+      url: '/search?query=%QUERY'
+  }
 });
 
 products.initialize();
+
 $("#typeahead").typeahead({
     highlight: true
 },{
@@ -25,8 +26,8 @@ $("#typeahead").typeahead({
 });
 
 $('#typeahead').bind('typeahead:select', function(ev, suggestion) {
-    window.location = '/product/' + encodeURIComponent(suggestion.id);
-    // console.log(suggestion.name);
+  console.log(suggestion);
+  window.location = '/product/' + encodeURIComponent(suggestion.id);
 });
 
 /* CART */
@@ -39,23 +40,23 @@ $('body').on('click', '.add-to-cart-link', function(e) {
       access = $('#cart_access').val();
 
   if (access == 99) {
-    showCartEmpty();
-    return false;
+    showCartEmpty()
+    return false
   }
 
   $.ajax({
     beforeSend: function(xhr) { xhr.setRequestHeader('X-CSRF-Token',
       $('meta[name="csrf-token"]').attr('content'))},
-        url: "/cart/items",
-      //url: $(this).attr('href'),
-      data: { product_id: product_id, quantity: quantity, mod: mod },
+    url: "/cart/items",
+    //url: $(this).attr('href'),
+    data: { product_id: product_id, quantity: quantity, mod: mod },
     type: 'POST',
     success: function(res) {
-      showCart(res);
+      showCart(res)
     },
     error: function() {
       alert('Error! Try later!');
-    }
+    },
   });
 });
 
@@ -97,7 +98,7 @@ function getCart() {
     url: '/cart',
     type: 'GET',
     success: function(res) {
-      showCart(res);
+      showCart(res)
     },
     error: function() {
       alert('Error! Try later!');
@@ -106,7 +107,7 @@ function getCart() {
 }
 
 function showCartEmpty() {
-  var result = { error: 'Please sign in! To view the cart.' }
+  var result = { error: 'Please sign in to view the cart.' }
   var modal = $('#cart').modal();
   $('#cart .modal-footer a, #cart .modal-footer .btn-danger').css('display', 'none');
   modal.find('.modal-body').html(result.error);
@@ -118,7 +119,7 @@ function clearCart() {
     method: 'delete',
     type: 'POST',
     success: function(res) {
-      showCart(res);
+      showCart(res)
     },
     error: function() {
       alert('Error!');
