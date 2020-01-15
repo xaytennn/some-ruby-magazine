@@ -8,8 +8,8 @@ class MainController < ApplicationController
   end
 
   def set_page_options
-    @page_title       = 'Beer Market'
-    @page_description = 'Beer'
-    @page_keywords    = 'Man Woman Young'
+    @page_title       = 'Smartphones Market'
+    @page_description = 'Smartphones'
+    @page_keywords    = 'China USA Russia'
   end
 end

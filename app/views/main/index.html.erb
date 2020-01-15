@@ -3,13 +3,13 @@
   <div id="top" class="callbacks_container">
     <ul class="" id="slider4"> <!--rslides-->
       <!-- <li>
-        <%= image_tag("bnr-1.jpg", alt: "") %>
+        <%= image_tag("bnr-1.jpg", alt: "", style: "width: 100%;") %>
       </li> -->
-      <!-- <li>
-        <%= image_tag("bnr-2.jpg", alt: "") %>
-      </li>
       <li>
-        <%= image_tag("bnr-3.jpg", alt: "") %>
+        <%= image_tag("bnr-2.jpg", alt: "", style: "width: 100%;") %>
+      </li>
+    <!--   <li>
+        <%= image_tag("bnr-3.jpg", alt: "", style: "width: 100%;") %>
       </li> -->
     </ul>
   </div>
@@ -25,37 +25,19 @@
   <div class="about">
     <div class="container">
       <div class="about-top grid-1">
-        <%# <% @brands.each do |i| %>
+        <% @brands.each do |i| %>
+
           <div class="col-md-4 about-left">
             <figure class="effect-bubba">
-              <%= image_tag(@brands[0].img, alt: "", class: "img-responsive") %>
+              <%= image_tag(i.img, alt: "", class: "img-responsive") %>
               <figcaption>
-                <h2><%= @brands[0].title %></h2>
-                <p><%= @brands[0].description %></p>
+                <h2><%= i.title %></h2>
+                <p><%= i.description %></p>
               </figcaption>
             </figure>
           </div>
 
-          <div class="col-md-4 about-left">
-            <figure class="effect-bubba">
-              <%= image_tag(@brands[1].img, alt: "", class: "img-responsive") %>
-              <figcaption>
-                <h2><%= @brands[1].title %></h2>
-                <p><%= @brands[1].description %></p>
-              </figcaption>
-            </figure>
-          </div>
-
-          <div class="col-md-4 about-left">
-            <figure class="effect-bubba">
-              <%= image_tag(@brands[2].img, alt: "", class: "img-responsive") %>
-              <figcaption>
-                <h2><%= @brands[2].title %></h2>
-                <p><%= @brands[2].description %></p>
-              </figcaption>
-            </figure>
-          </div>
-        <%# <% end %>
+        <% end %>
         <div class="clearfix"></div>
       </div>
     </div>
@@ -77,7 +59,6 @@
                 <a href="product/<%=hit.id%>" class="mask">
                   <%= image_tag(hit.img, alt: "", class: "img-responsive zoom-img" ) %>
                 </a>
-                <%= %>
                 <div class="product-bottom">
                   <h3><a href="product/<%=hit.id %>"><%=hit.title %></a> </h3>
                   <!-- <p>Explore Now</p> -->
