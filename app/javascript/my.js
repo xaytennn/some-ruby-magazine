@@ -40,7 +40,7 @@ $('body').on('click', '.add-to-cart-link', function(e) {
       access = $('#cart_access').val();
 
   if (access == 99) {
-    showCartEmpty()
+    showCartEmpty();
     return false
   }
 

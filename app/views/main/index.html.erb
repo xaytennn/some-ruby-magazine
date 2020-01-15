@@ -2,9 +2,9 @@
 <div class="bnr" id="home">
   <div id="top" class="callbacks_container">
     <ul class="" id="slider4"> <!--rslides-->
-      <li>
+      <!-- <li>
         <%= image_tag("bnr-1.jpg", alt: "") %>
-      </li>
+      </li> -->
       <!-- <li>
         <%= image_tag("bnr-2.jpg", alt: "") %>
       </li>
@@ -25,17 +25,37 @@
   <div class="about">
     <div class="container">
       <div class="about-top grid-1">
-        <% @brands.each do |i| %>
+        <%# <% @brands.each do |i| %>
           <div class="col-md-4 about-left">
             <figure class="effect-bubba">
-              <%= image_tag(i.img, alt: "", class: "img-responsive") %>
+              <%= image_tag(@brands[0].img, alt: "", class: "img-responsive") %>
               <figcaption>
-                <h2><%= i.title %></h2>
-                <p><%= i.description %></p>
+                <h2><%= @brands[0].title %></h2>
+                <p><%= @brands[0].description %></p>
               </figcaption>
             </figure>
           </div>
-        <% end %>
+
+          <div class="col-md-4 about-left">
+            <figure class="effect-bubba">
+              <%= image_tag(@brands[1].img, alt: "", class: "img-responsive") %>
+              <figcaption>
+                <h2><%= @brands[1].title %></h2>
+                <p><%= @brands[1].description %></p>
+              </figcaption>
+            </figure>
+          </div>
+
+          <div class="col-md-4 about-left">
+            <figure class="effect-bubba">
+              <%= image_tag(@brands[2].img, alt: "", class: "img-responsive") %>
+              <figcaption>
+                <h2><%= @brands[2].title %></h2>
+                <p><%= @brands[2].description %></p>
+              </figcaption>
+            </figure>
+          </div>
+        <%# <% end %>
         <div class="clearfix"></div>
       </div>
     </div>
@@ -60,9 +80,18 @@
                 <%= %>
                 <div class="product-bottom">
                   <h3><a href="product/<%=hit.id %>"><%=hit.title %></a> </h3>
-                  <p>Explore Now</p>
+                  <!-- <p>Explore Now</p> -->
                   <h4>
-                    <%= link_to 'cart_items', class: 'add-to-cart-link', data: {id: hit.id} do %>
+                    <%# <%= button_to "Add to cart",
+                        cart_items_path,
+                        class: 'add-to-cart-link',
+                        data: {id: hit.id} do %>
+                        <%= button_to cart_items_path,
+                                  remote: true,
+                                  data: { id: hit.id },
+                                  class: "add-to-cart-link",
+                                  id: "productAdd" do
+                        %>
                       <i></i>
                     <% end %>
                     <span class=" item_price">$ <%=hit.price %></span>

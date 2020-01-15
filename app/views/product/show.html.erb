@@ -35,8 +35,8 @@
 
               <div class=""><!--flexslider-->
                 <ul class="slides">
-                  <li data-thumb="<%= asset_path 's-1.jpg' %>">
-                    <div class="thumb-image"> <img src="<%= asset_path 's-1.jpg' %>" data-imagezoom="true" class="img-responsive" alt=""> </div>
+                  <li data-thumb="<%= asset_path 'a-1.png' %>">
+                    <div class="thumb-image"> <img src="<%= asset_path 'crossword.png' %>" data-imagezoom="true" class="img-responsive" alt=""> </div>
                   </li>
                 </ul>
               </div>
@@ -83,20 +83,20 @@
                   <div class="clearfix"> </div>
                 </ul>
               </div>
-              <ul class="tag-men">
+              <!-- <ul class="tag-men">
                 <li>
                   <span>CATEGORY</span>
                   <strong>:
 
                   </strong>
                 </li>
-              </ul>
+              </ul> -->
               <div class="quantity">
-                <input type="number" name="quantity" value="1" size="4" min="1" step="1">
+                <input type="number" name="quantity" value="1" size="4" min="1" max="99" step="1">
               </div>
 
               <%=
-                link_to 'ADD TO CART',
+                button_to "ADD TO CART",
                         cart_items_path,
                         remote: true,
                         data: { method: :post, id: @product.id },
@@ -278,7 +278,7 @@
             </ul>
           </section>
 
-          <section class="sky-form">
+          <!-- <section class="sky-form">
             <h4>Discount</h4>
             <div class="row1 rw2 scroll-pane">
               <div class="col col-4">
@@ -292,7 +292,7 @@
                 <label class="radio"><input type="radio" name="radio"><i></i>10% and above</label>
               </div>
             </div>
-          </section>
+          </section> -->
         </div>
       </div>
       <div class="clearfix"> </div>

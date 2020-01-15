@@ -4,26 +4,21 @@ require 'faker'
 
 
 # table brands
-
 brand_attributes = [{
-                        title: 'Citizen', bytitle: 'citizen',
-                        img: 'abt-2.jpg', description: Faker::Superhero.name
+                        title: 'Xiaomi', bytitle: 'xiaomi',
+                        img: 'abt-1.jpg', description: 'China' #Faker::Superhero.name
                     },
                     {
-                        title: 'Casio', bytitle: 'casio', img: 'abt-1.jpg',
-                        description: Faker::Superhero.name
+                        title: 'Huawei', bytitle: 'huawei',
+                        img: 'abt-3.jpg', description: 'China' #Faker::Superhero.name
                     },
                     {
-                        title: 'Royal London', bytitle: 'royal-london',
-                        img: 'abt-3.jpg', description: Faker::Superhero.name
+                        title: 'Apple', bytitle: 'apple',
+                        img: 'abt-2.jpg', description: 'USA' #Faker::Superhero.name
                     },
                     {
-                        title: 'Seiko', bytitle: 'seiko', img: 'seiko.png',
-                        description: Faker::Superhero.name
-                    },
-                    {
-                        title: 'Diesel', bytitle: 'diesel', img: 'diesel.png',
-                        description: Faker::Superhero.name
+                        title: 'TeXet', bytitle: 'texet',
+                        img: '', description: 'Russia' #Faker::Superhero.name
                     }]
 
 brand_attributes.each do |attr|
@@ -32,304 +27,233 @@ end
 
 # - - - - -
 
-# - - - - -
-
 # table categories
+china = Category.create(title: 'China', bytitle: 'china', keywords: 'china', description: 'from China')
+xiaomi = Category.create(title: 'Xiaomi', bytitle: 'xiaomi', keywords: 'xiaomi', description: 'xiaomi', parent: china)
+huawei = Category.create(title: 'Huawei', bytitle: 'huawei', keywords: 'huawei', description: 'huawei', parent: china)
 
+usa = Category.create(title: 'USA', bytitle: 'usa', keywords: 'usa', description: 'from USA')
+apple = Category.create(title: 'Apple', bytitle: 'apple', keywords: 'apple', description: 'apple', parent: usa)
 
-women = Category.create(title: 'Women', bytitle: 'women', keywords: 'women', description: 'for women')
-electronic2 = Category.create(title: 'Electronic', bytitle: 'electronic2', keywords: 'electronic', description: 'electronic', parent: women)
-mechanical2 = Category.create(title: 'Mechanical', bytitle: 'mechanical2', keywords: 'mechanical', description: 'mechanical', parent: women)
-epos = Category.create(title: 'Epos', bytitle: 'epos', keywords: 'epos', description: 'epos', parent: electronic2)
-seiko = Category.create(title: 'Seiko', bytitle: 'seiko', keywords: 'seiko', description: 'seiko', parent: mechanical2)
-
-men = Category.create(title: 'Men', bytitle: 'men', keywords: 'men', description: 'for men')
-electronic1 = Category.create(title: 'Electronic', bytitle: 'electronic1', keywords: 'electronic', description: 'electronic', parent: men)
-mechanical1 = Category.create(title: 'Mechanical', bytitle: 'mechanical1', keywords: 'mechanical', description: 'mechanical', parent: men)
-casio = Category.create(title: 'Casio', bytitle: 'casio', keywords: 'casio', description: 'casio', parent: mechanical1)
-citizen = Category.create(title: 'Citizen', bytitle: 'citizen', keywords: 'citizen', description: 'citizen', parent: electronic1)
-royal = Category.create(title: 'Royal London', bytitle: 'royal-london', keywords: 'royal-london', description: 'royal-london', parent: electronic1)
-
-kids = Category.create(title: 'Kids', bytitle: 'kids', keywords: 'kids', description: 'for kids')
-adriatica = Category.create(title: 'Adriatica', bytitle: 'adriatica', keywords: 'adriatica', description: 'adriatica', parent: kids)
-mechanical1 = Category.create(title: 'Anne Klein', bytitle: 'anne-klein', keywords: 'anne-klein', description: 'anne-klein', parent: kids)
+russia = Category.create(title: 'Russia', bytitle: 'russia', keywords: 'russia', description: 'from Russia')
+teXet = Category.create(title: 'TeXet', bytitle: 'teXet', keywords: 'teXet', description: 'teXet', parent: russia)
 
 # - - - - - - - -
 
-
 # table products
 product_attributes = [
-    {
-        category_id: '6',
-        brand_id: '1',
-        title: 'Casio MQ-24-7BUL',
-        bytitle: 'casio-mq-24-7bul',
-        content: Faker::Lorem.sentence(word_count: 20),
-        price: Faker::Commerce.price,
-        old_price: Faker::Commerce.price,
-        status: 1,
-        keywords: 'keywords',
-        description: Faker::Lorem.sentence(word_count: 10),
-        img: 'p-2.png',
-        hit: 1
-    },
-    {
-        category_id: '6',
-        brand_id: '1',
-        title: 'Casio GA-1000-1AER',
-        bytitle: 'casio-ga-1000-1aer',
-        content: Faker::Lorem.sentence(word_count: 20),
-        price: Faker::Commerce.price,
-        old_price: Faker::Commerce.price,
-        status: 1,
-        keywords: 'keywords',
-        description: Faker::Lorem.sentence(word_count: 10),
-        img: 'p-3.png',
-        hit: 1
-    },
-    {
-        category_id: '7',
-        brand_id: '2',
-        title: 'Citizen JP1010-00E',
-        bytitle: 'citizen-jp1010-00e',
-        content: Faker::Lorem.sentence(word_count: 20),
-        price: Faker::Commerce.price,
-        old_price: Faker::Commerce.price,
-        status: 1,
-        keywords: 'keywords',
-        description: Faker::Lorem.sentence(word_count: 10),
-        img: 'p-4.png',
-        hit: 1
-    },
-    {
-        category_id: '7',
-        brand_id: '2',
-        title: 'Citizen BJ2111-08E',
-        bytitle: 'citizen-bj2111-08e',
-        content: Faker::Lorem.sentence(word_count: 20),
-        price: Faker::Commerce.price,
-        old_price: Faker::Commerce.price,
-        status: 1,
-        keywords: 'keywords',
-        description: Faker::Lorem.sentence(word_count: 10),
-        img: 'p-5.png',
-        hit: 1
-    },
-    {
-        category_id: '6',
-        brand_id: '4',
-        title: 'Royal London 41040-01',
-        bytitle: 'royal-london-41040-01',
-        content: Faker::Lorem.sentence(word_count: 20),
-        price: Faker::Commerce.price,
-        old_price: Faker::Commerce.price,
-        status: 1,
-        keywords: 'keywords',
-        description: Faker::Lorem.sentence(word_count: 10),
-        img: 'p-6.png',
-        hit: 1
-    },
-    {
-        category_id: '6',
-        brand_id: '4',
-        title: 'Royal London 20034-02',
-        bytitle: 'royal-london-20034-02',
-        content: Faker::Lorem.sentence(word_count: 20),
-        price: Faker::Commerce.price,
-        old_price: Faker::Commerce.price,
-        status: 1,
-        keywords: 'keywords',
-        description: Faker::Lorem.sentence(word_count: 10),
-        img: 'p-7.png',
-        hit: 1
-    },
-    {
-        category_id: '6',
-        brand_id: '4',
-        title: 'Royal London 41156-02',
-        bytitle: 'royal-london-41156-02',
-        content: Faker::Lorem.sentence(word_count: 20),
-        price: Faker::Commerce.price,
-        old_price: Faker::Commerce.price,
-        status: 1,
-        keywords: 'keywords',
-        description: Faker::Lorem.sentence(word_count: 10),
-        img: 'p-8.png',
-        hit: 1
-    },
-    {
-        category_id: '6',
-        brand_id: '4',
-        title: 'Royal London 6754-99',
-        bytitle: 'royal-london-6754-99',
-        content: Faker::Lorem.sentence(word_count: 20),
-        price: Faker::Commerce.price,
-        old_price: Faker::Commerce.price,
-        status: 1,
-        keywords: 'keywords',
-        description: Faker::Lorem.sentence(word_count: 10),
-        img: 'p-6.png',
-        hit: 1
-    },
-    {
-        category_id: '1',
-        brand_id: '4',
-        title: 'Royal London 12',
-        bytitle: 'royal-london-67512',
-        content: Faker::Lorem.sentence(word_count: 20),
-        price: Faker::Commerce.price,
-        old_price: Faker::Commerce.price,
-        status: 1,
-        keywords: 'keywords',
-        description: Faker::Lorem.sentence(word_count: 10),
-        img: 'p-5.png',
-        hit: 1
-    },
-    {
-        category_id: '2',
-        brand_id: '4',
-        title: 'Royal London 6754-9922',
-        bytitle: 'royal-london-6754-9922',
-        content: Faker::Lorem.sentence(word_count: 20),
-        price: Faker::Commerce.price,
-        old_price: Faker::Commerce.price,
-        status: 1,
-        keywords: 'keywords',
-        description: Faker::Lorem.sentence(word_count: 10),
-        img: 'p-4.png',
-        hit: 1
-    },
-    {
-        category_id: '3',
-        brand_id: '4',
-        title: 'Royal London 6754-939',
-        bytitle: 'royal-london-6754-939',
-        content: Faker::Lorem.sentence(word_count: 20),
-        price: Faker::Commerce.price,
-        old_price: Faker::Commerce.price,
-        status: 1,
-        keywords: 'keywords',
-        description: Faker::Lorem.sentence(word_count: 10),
-        img: 'p-3.png',
-        hit: 1
-    },
-    {
-        category_id: '4',
-        brand_id: '4',
-        title: 'Royal London 6754-919',
-        bytitle: 'royal-london-6754-199',
-        content: Faker::Lorem.sentence(word_count: 20),
-        price: Faker::Commerce.price,
-        old_price: Faker::Commerce.price,
-        status: 1,
-        keywords: 'keywords',
-        description: Faker::Lorem.sentence(word_count: 10),
-        img: 'p-2.png',
-        hit: 1
-    },
-    {
-        category_id: '5',
-        brand_id: '4',
-        title: 'Royal London 67534-99',
-        bytitle: 'royal-london-67354-99',
-        content: Faker::Lorem.sentence(word_count: 20),
-        price: Faker::Commerce.price,
-        old_price: Faker::Commerce.price,
-        status: 1,
-        keywords: 'keywords',
-        description: Faker::Lorem.sentence(word_count: 10),
-        img: 'p-1.png',
-        hit: 1
-    },
-    {
-        category_id: '8',
-        brand_id: '4',
-        title: 'Royal London 675214-99',
-        bytitle: 'royal-london-671154-99',
-        content: Faker::Lorem.sentence(word_count: 20),
-        price: Faker::Commerce.price,
-        old_price: Faker::Commerce.price,
-        status: 1,
-        keywords: 'keywords',
-        description: Faker::Lorem.sentence(word_count: 10),
-        img: 'p-6.png',
-        hit: 1
-    },
-    {
-        category_id: '9',
-        brand_id: '4',
-        title: 'Royal London 6712354-99',
-        bytitle: 'royal-london-6123754-99',
-        content: Faker::Lorem.sentence(word_count: 20),
-        price: Faker::Commerce.price,
-        old_price: Faker::Commerce.price,
-        status: 1,
-        keywords: 'keywords',
-        description: Faker::Lorem.sentence(word_count: 10),
-        img: 'p-5.png',
-        hit: 1
-    },
-    {
-        category_id: '10',
-        brand_id: '4',
-        title: 'Royal London 675334-99',
-        bytitle: 'royal-london-675334-99',
-        content: Faker::Lorem.sentence(word_count: 20),
-        price: Faker::Commerce.price,
-        old_price: Faker::Commerce.price,
-        status: 1,
-        keywords: 'keywords',
-        description: Faker::Lorem.sentence(word_count: 10),
-        img: 'p-4.png',
-        hit: 1
-    },
-    {
-        category_id: '11',
-        brand_id: '4',
-        title: 'Royal London 67123454-99',
-        bytitle: 'royal-london-67234554-99',
-        content: Faker::Lorem.sentence(word_count: 20),
-        price: Faker::Commerce.price,
-        old_price: Faker::Commerce.price,
-        status: 1,
-        keywords: 'keywords',
-        description: Faker::Lorem.sentence(word_count: 10),
-        img: 'p-3.png',
-        hit: 1
-    },
-    {
-        category_id: '12',
-        brand_id: '4',
-        title: 'Royal London 6751224-99',
-        bytitle: 'royal-london-67121254-99',
-        content: Faker::Lorem.sentence(word_count: 20),
-        price: Faker::Commerce.price,
-        old_price: Faker::Commerce.price,
-        status: 1,
-        keywords: 'keywords',
-        description: Faker::Lorem.sentence(word_count: 10),
-        img: 'p-2.png',
-        hit: 1
-    },
-    {
-        category_id: '13',
-        brand_id: '4',
-        title: 'Royal London 675334-99',
-        bytitle: 'royal-london-6754444-99',
-        content: Faker::Lorem.sentence(word_count: 20),
-        price: Faker::Commerce.price,
-        old_price: Faker::Commerce.price,
-        status: 1,
-        keywords: 'keywords',
-        description: Faker::Lorem.sentence(word_count: 10),
-        img: 'p-6.png',
-        hit: 1
-    }
-
-
+  {
+      category_id: '2',
+      brand_id: '1',
+      title: 'Xiaomi Mi 9',
+      bytitle: 'xiaomi-mi-9',
+      content: Faker::Lorem.sentence(word_count: 20),
+      price: 487,
+      old_price: 243,
+      status: 1,
+      keywords: 'keywords',
+      description: Faker::Lorem.sentence(word_count: 10),
+      img: 'x-1.png',
+      hit: 1
+  },
+  {
+      category_id: '2',
+      brand_id: '1',
+      title: 'Xiaomi Mi 9T',
+      bytitle: 'xiaomi-mi-9t',
+      content: Faker::Lorem.sentence(word_count: 20),
+      price: 203,
+      old_price: 407,
+      status: 1,
+      keywords: 'keywords',
+      description: Faker::Lorem.sentence(word_count: 10),
+      img: 'x-2.png',
+      hit: 1
+  },
+  {
+      category_id: '2',
+      brand_id: '1',
+      title: 'Xiaomi Mi 9 Lite',
+      bytitle: 'xiaomi-mi-9-lite',
+      content: Faker::Lorem.sentence(word_count: 20),
+      price: 122,
+      old_price: 244,
+      status: 1,
+      keywords: 'keywords',
+      description: Faker::Lorem.sentence(word_count: 10),
+      img: 'x-3.png',
+      hit: 1
+  },
+  {
+      category_id: '2',
+      brand_id: '1',
+      title: 'Xiaomi Mi 9SE',
+      bytitle: 'xiaomi-mi-9SE',
+      content: Faker::Lorem.sentence(word_count: 20),
+      price: 203,
+      old_price: 407,
+      status: 1,
+      keywords: 'keywords',
+      description: Faker::Lorem.sentence(word_count: 10),
+      img: 'x-4.png',
+      hit: 1
+  },
+  {
+      category_id: '3',
+      brand_id: '2',
+      title: 'Huawei P Smart Z',
+      bytitle: 'huawei-p-smart-z',
+      content: Faker::Lorem.sentence(word_count: 20),
+      price: 105,
+      old_price: 211,
+      status: 1,
+      keywords: 'keywords',
+      description: Faker::Lorem.sentence(word_count: 10),
+      img: 'h-1.png',
+      hit: 1
+  },
+  {
+      category_id: '3',
+      brand_id: '2',
+      title: 'Huawei P30 Pro',
+      bytitle: 'huawei-p30-pro',
+      content: Faker::Lorem.sentence(word_count: 20),
+      price: 407,
+      old_price: 814,
+      status: 1,
+      keywords: 'keywords',
+      description: Faker::Lorem.sentence(word_count: 10),
+      img: 'h-2.png',
+      hit: 1
+  },
+  {
+      category_id: '3',
+      brand_id: '2',
+      title: 'Huawei Nova 5z',
+      bytitle: 'huawei-nova-5z',
+      content: Faker::Lorem.sentence(word_count: 20),
+      price: 227,
+      old_price: 455,
+      status: 1,
+      keywords: 'keywords',
+      description: Faker::Lorem.sentence(word_count: 10),
+      img: 'h-3.png',
+      hit: 1
+  },
+  {
+      category_id: '3',
+      brand_id: '2',
+      title: 'Huawei Y9 Prime',
+      bytitle: 'huawei-y9-prime',
+      content: Faker::Lorem.sentence(word_count: 20),
+      price: 97,
+      old_price: 195,
+      status: 1,
+      keywords: 'keywords',
+      description: Faker::Lorem.sentence(word_count: 10),
+      img: 'h-4.png',
+      hit: 1
+  },
+  {
+      category_id: '5',
+      brand_id: '3',
+      title: 'iPhone Xr',
+      bytitle: 'iphone-xr',
+      content: Faker::Lorem.sentence(word_count: 20),
+      price: 341,
+      old_price: 683,
+      status: 1,
+      keywords: 'keywords',
+      description: Faker::Lorem.sentence(word_count: 10),
+      img: 'a-1.png',
+      hit: 1
+  },
+  {
+      category_id: '5',
+      brand_id: '3',
+      title: 'iPhone X',
+      bytitle: 'iphone-x',
+      content: Faker::Lorem.sentence(word_count: 20),
+      price: 407,
+      old_price: 814,
+      status: 1,
+      keywords: 'keywords',
+      description: Faker::Lorem.sentence(word_count: 10),
+      img: 'a-2.png',
+      hit: 1
+  },
+  {
+      category_id: '5',
+      brand_id: '3',
+      title: 'iPhone 11',
+      bytitle: 'iphone-11',
+      content: Faker::Lorem.sentence(word_count: 20),
+      price: 488,
+      old_price: 977,
+      status: 1,
+      keywords: 'keywords',
+      description: Faker::Lorem.sentence(word_count: 10),
+      img: 'a-3.png',
+      hit: 1
+  },
+  {
+      category_id: '5',
+      brand_id: '3',
+      title: 'iPhone 8',
+      bytitle: 'iphone-8',
+      content: Faker::Lorem.sentence(word_count: 20),
+      price: 203,
+      old_price: 407,
+      status: 1,
+      keywords: 'keywords',
+      description: Faker::Lorem.sentence(word_count: 10),
+      img: 'a-4.png',
+      hit: 1
+  },
+  {
+      category_id: '7',
+      brand_id: '4',
+      title: 'TeXet ТМ-5583',
+      bytitle: 'texet-tm-5583',
+      content: Faker::Lorem.sentence(word_count: 20),
+      price: 41,
+      old_price: 82,
+      status: 1,
+      keywords: 'keywords',
+      description: Faker::Lorem.sentence(word_count: 10),
+      img: 't-1.png',
+      hit: 1
+  },
+  {
+      category_id: '7',
+      brand_id: '4',
+      title: 'TeXet TM-5003',
+      bytitle: 'texet-tm-5003',
+      content: Faker::Lorem.sentence(word_count: 20),
+      price: 24,
+      old_price: 49,
+      status: 1,
+      keywords: 'keywords',
+      description: Faker::Lorem.sentence(word_count: 10),
+      img: 't-2.png',
+      hit: 1
+  },
+  {
+      category_id: '7',
+      brand_id: '4',
+      title: 'TeXet TM-5583',
+      bytitle: 'texet-tm-5583',
+      content: Faker::Lorem.sentence(word_count: 20),
+      price: 36,
+      old_price: 73,
+      status: 1,
+      keywords: 'keywords',
+      description: Faker::Lorem.sentence(word_count: 10),
+      img: 't-3.png',
+      hit: 1
+  }
 ]
 
 product_attributes.each do |attr|
   Product.create(attr) unless Product.where(attr).first
 end
-
