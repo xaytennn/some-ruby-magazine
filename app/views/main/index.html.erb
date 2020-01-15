@@ -61,23 +61,14 @@
                 </a>
                 <div class="product-bottom">
                   <h3><a href="product/<%=hit.id %>"><%=hit.title %></a> </h3>
-                  <!-- <p>Explore Now</p> -->
                   <h4>
-                    <%# <%= button_to "Add to cart",
-                        cart_items_path,
-                        class: 'add-to-cart-link',
-                        data: {id: hit.id} do %>
-                        <%= button_to cart_items_path,
-                                  remote: true,
-                                  data: { id: hit.id },
-                                  class: "add-to-cart-link",
-                                  id: "productAdd" do
-                        %>
+                    <%# <%= link_to 'cart', class: 'add-to-cart-link', data: {id: hit.id} do %>
+                    <%= button_to cart_items_path(product_id: hit.id) do %>
                       <i></i>
                     <% end %>
-                    <span class=" item_price">$ <%=hit.price %></span>
+                    <span class=" item_price"><%= number_to_currency(hit.price) %></span>
                     <% if hit.old_price %>
-                      <small><del>$ <%= hit.old_price %></del></small>
+                      <small><del><%= number_to_currency(hit.old_price) %></del></small>
                     <% end %>
                   </h4>
                 </div>

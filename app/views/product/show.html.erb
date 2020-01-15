@@ -83,25 +83,27 @@
                   <div class="clearfix"> </div>
                 </ul>
               </div>
-              <!-- <ul class="tag-men">
-                <li>
-                  <span>CATEGORY</span>
-                  <strong>:
 
-                  </strong>
-                </li>
-              </ul> -->
               <div class="quantity">
                 <input type="number" name="quantity" value="1" size="4" min="1" max="99" step="1">
               </div>
 
-              <%=
-                button_to "ADD TO CART",
-                        cart_items_path,
-                        remote: true,
-                        data: { method: :post, id: @product.id },
-                        class: "add-cart item-add add-to-cart-link",
-                        id: "productAdd"
+              <%= button_to cart_items_path(product_id: @product.id), style: "width: 120px; height: 30px;;" do %>
+                ADD TO CART
+              <% end %>
+
+              <%#= link_to 'ADD TO CART',
+                    cart_items_path,
+                    remote: true,
+                    data: { method: :post, id: @product.id },
+                    class: "add-cart item-add add-to-cart-link",
+                    id: "productAdd"
+                # button_to "ADD TO CART",
+                #         cart_items_path,
+                #         remote: true,
+                #         data: { method: :post, id: @product.id },
+                #         class: "add-cart item-add add-to-cart-link",
+                #         id: "productAdd"
               %>
 
             </div>
@@ -165,10 +167,13 @@
                     </a>
                     <div class="product-bottom">
                       <h3><a href="<%= related.id %>"><%= related.title %></a></h3>
-                      <!-- <p>Explore Now</p> -->
+
                       <h4>
-                        <a class="item_add add-to-cart-link" href="cart/add?id=<%= related.id %>" data-id="<%= related.id %>"><i></i>
-                        </a>
+
+                        <%= button_to cart_items_path(product_id: related.id) do %>
+                          <i></i>
+                        <% end %>
+                        <!--<a class="item_add add-to-cart-link" href="cart/add?id=<%=related.id %>" data-id="<%=related.id %>"><i></i></a>-->
                         <span class=" item_price">$ <%= related.price %></span>
                         <% if related.old_price %>
                           <del><%= related.old_price %></del>
@@ -200,9 +205,13 @@
                     </a>
                     <div class="product-bottom">
                       <h3><a href="<%= recently.id %>"><%= recently.title %></a></h3>
-                      <!-- <p>Explore Now</p> -->
+
                       <h4>
-                        <a class="item-add add-to-cart-link" href="cart/add?id=<%=recently.id %>" data-id="<%=recently.id %>"><i></i></a>
+
+                        <%= button_to cart_items_path(product_id: recently.id) do %>
+                          <i></i>
+                        <% end %>
+                        <!--<a class="item-add add-to-cart-link" href="cart/add?id=<%=recently.id %>" data-id="<%=recently.id %>"><i></i></a>-->
                         <span class=" item_price">$ <%= recently.price %></span>
                         <% if recently.old_price %>
                           <del><%= recently.old_price %></del>
@@ -275,3 +284,4 @@
   </div>
 </div>
 <!--end-single-->
+<input type="hidden" value="<%= !current_user.nil? ? 88 : 99 %>" id="cart_access" />
