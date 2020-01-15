@@ -11,7 +11,7 @@
 #/db/*.sqlite3
 #/db/*.sqlite3-journal
 #/db/*.sqlite3-*
-
+.idea\dataSources.xml
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
