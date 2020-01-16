@@ -116,44 +116,21 @@
             <li class="item1">
               <a href="#"><img src="<%= asset_path 'arrow.png' %>" alt="">Specifications</a>
               <ul>
-                <li class="subitem1">Operating System: <%= @product.os %>
-                  <br>Processor: <%= @product.processor %>
-                  <br>Dimensions: <%= @product.dimensions  %>
-                  <br>Weight: <%= @product.weight  %>
-                  <br>Main camera: <%= @product.main_cam  %>
-                  <br>Front camera: <%= @product.front_cam  %>
-                  <br>Battery Type and Capacity: <%= @product.battery %>
+                <li class="subitem1">
+                  <h4>1) Operating System: <%= @product.os %>
+                  <br><br>2) Processor: <%= @product.processor %>
+                  <br><br>3) Dimensions: <%= @product.dimensions  %>
+                  <br><br>4) Weight: <%= @product.weight  %>
+                  <br><br>5) Main camera: <%= @product.main_cam  %>
+                  <br><br>6) Front camera: <%= @product.front_cam  %>
+                  <br><br>7) Battery Type and Capacity: <%= @product.battery %></h4>
                   </li>
               </ul>
             </li>
             <li class="item2">
               <a href="#"><img src="<%= asset_path 'arrow.png' %>" alt="">Description</a>
               <ul>
-                <li class="subitem1"><%= @product.description %></li>
-
-              </ul>
-            </li>
-            <li class="item3">
-              <a href="#"><img src="<%= asset_path 'arrow.png' %>" alt="">Reviews (10)</a>
-              <ul>
-                <li class="subitem1"><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a></li>
-                <li class="subitem2"><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a></li>
-                <li class="subitem3"><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a></li>
-              </ul>
-            </li>
-            <li class="item4">
-              <a href="#"><img src="<%= asset_path 'arrow.png' %>" alt="">Helpful Links</a>
-              <ul>
-                <li class="subitem2"><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a></li>
-                <li class="subitem3"><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a></li>
-              </ul>
-            </li>
-            <li class="item5">
-              <a href="#"><img src="<%= asset_path 'arrow.png' %>" alt="">Make a gift</a>
-              <ul>
-                <li class="subitem1"><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a></li>
-                <li class="subitem2"><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a></li>
-                <li class="subitem3"><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a></li>
+                <li class="subitem1"><h4><%= @product.description %></h4></li>
               </ul>
             </li>
           </ul>
