@@ -48,11 +48,12 @@ $('body').on('click', '.add-to-cart-link', function(e) {
     beforeSend: function(xhr) { xhr.setRequestHeader('X-CSRF-Token',
       $('meta[name="csrf-token"]').attr('content'))},
     url: "/cart/items",
-    //url: $(this).attr('href'),
+    // url: $(this).attr('href'),
     data: { product_id: product_id, quantity: quantity, mod: mod },
     type: 'POST',
     success: function(res) {
-      showCart(res)
+      alert('Success .add-to-cart-link');
+      showCart(res);
     },
     error: function() {
       alert('Error! Try later!');

@@ -19,6 +19,26 @@ brand_attributes = [{
                     {
                         title: 'TeXet', bytitle: 'texet',
                         img: '', description: 'Russia' #Faker::Superhero.name
+                    },
+                    {
+                        title: 'ZTE', bytitle: 'zte',
+                        img: '', description: 'China' #Faker::Superhero.name
+                    },
+                    {
+                        title: 'BlackBerry', bytitle: 'blackberry',
+                        img: '', description: 'USA' #Faker::Superhero.name
+                    },
+                    {
+                        title: 'Motorola', bytitle: 'motorola',
+                        img: '', description: 'USA' #Faker::Superhero.name
+                    },
+                    {
+                        title: 'YotaPhone', bytitle: 'yotaphone',
+                        img: '', description: 'Russia' #Faker::Superhero.name
+                    },
+                    {
+                        title: 'Highscreen', bytitle: 'highscreen',
+                        img: '', description: 'Russia' #Faker::Superhero.name
                     }]
 
 brand_attributes.each do |attr|
