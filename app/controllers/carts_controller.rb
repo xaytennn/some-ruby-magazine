@@ -1,16 +1,19 @@
 class CartsController < ApplicationController
   include CartsHelper
-  layout false
+  include CurrentCart
+  before_action :set_cart, only: [:create]
+  before_action :set_cart, only: [:show, :destroy]
+  # layout false
 
-  # def index
-  #   @carts = Cart.all
-  # end
+  def index
+    @carts = Cart.all
+  end
 
   def show; end
 
-  # def new
-  #   @cart = Cart.new
-  # end
+  def new
+    @cart = Cart.new
+  end
 
 
   def destroy
@@ -18,11 +21,7 @@ class CartsController < ApplicationController
     render :show
   end
 
-  # private
-  # def set_cart
-  #   @cart = Cart.find(session[:id])
-  #   rescue ActiveRecord::RecordNotFound
-  #   @cart = Cart.create
-  #   session[:id] = @cart.id
-  # end
+  def create
+    @cart = Cart.new(cart_params)
+  end
 end

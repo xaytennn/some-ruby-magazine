@@ -25,7 +25,10 @@
                   </a>
                   <div class="product-bottom">
                     <h3><%= product.title %></h3>
-                    <p>Explore Now</p>
+                    
+                    <%= button_to cart_items_path(product_id: hit.id) do %>
+                      <i></i>
+                    <% end %>
                     <h4>$ <%=product.price %></h4>
                     <del>$ <%=product.old_price %></del>
                   </div>

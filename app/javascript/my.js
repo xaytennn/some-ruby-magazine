@@ -26,7 +26,7 @@ $("#typeahead").typeahead({
 });
 
 $('#typeahead').bind('typeahead:select', function(ev, suggestion) {
-  console.log(suggestion);
+  // console.log(suggestion);
   window.location = '/product/' + encodeURIComponent(suggestion.id);
 });
 

@@ -1,4 +1,9 @@
+<!-- -- -->
+
 <% unless current_user.nil? %>
+  <% if products.empty? %>
+    <h1>"EMPTY"</h1>
+  <% end %>
   <% if !products.empty? %>
     <div class="table-responsive">
       <table class="table table-hover table-striped">
@@ -20,7 +25,7 @@
             <% if item.product.img.nil? %>
               <%= link_to(item.product.title, item.product) %>
             <% else %>
-              <%= link_to(image_tag(item.product.img), item.product) %>
+              <%= image_tag(item.product.img, class: "photo_photo") %>
             <% end %>
           </td>
           <td><%= link_to(item.product.title, item.product) %></td>
@@ -29,7 +34,7 @@
           </td>
           <% pr = item.quantity * item.product.price %>
           <% sum << pr %>
-          <td><%= item.product.price %></td>
+          <td style="background: #777400;"><%= item.product.price %></td>
           <td>
             <span data-id="<%= item.product_id %>" class="glyphicon glyphicon-remove text-danger del-item" aria-hidden="true"></span>
           </td>

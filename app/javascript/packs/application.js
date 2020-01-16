@@ -3,6 +3,10 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
+//= link application
+//= require jquery
+//= require jquery_ujs
+//= require turbolinks
 //= require rails-ujs
 //= require jquery-1.11.0.min
 //= require bootstrap.min
@@ -16,11 +20,9 @@
 //= require imagezoom
 //= require jquery.flexslider
 //= require flexs
-// =require my
-//= require jquery
-//= require jquery_ujs
-
-
+//= require my
+//= require my2
+//= require_tree .
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)

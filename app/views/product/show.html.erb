@@ -66,7 +66,7 @@
               <div class="available">
                 <ul>
                   <li>Color
-                    <select>
+                    <select class="available_color">
                       <option>Silver</option>
                       <option>Black</option>
                       <option>Dark Black</option>
@@ -74,7 +74,7 @@
                     </select>
                   </li>
                   <li class="size-in">Size
-                    <select>
+                    <select class="available_size">
                       <option>Large</option>
                       <option>Medium</option>
                       <option>Small</option>
@@ -85,19 +85,23 @@
               </div>
 
               <div class="quantity">
-                <input type="number" name="quantity" value="1" size="4" min="1" max="99" step="1">
+                <input class="quantity_quantity" type="number" name="quantity" value="1" size="4" min="1" max="99" step="1">
               </div>
+              <button type="button" name="button" onclick="something_to();" style="width: 120px; height: 30px;"></button>
 
-              <%= button_to cart_items_path(product_id: @product.id), style: "width: 120px; height: 30px;;" do %>
-                ADD TO CART
+               <%= button_to cart_items_path(product_id: @product.id), remote: true, style: "width: 120px; height: 30px;" do %>
+                <div>
+                  ADD TO CART
+                </div>
               <% end %>
 
-              <%#= link_to 'ADD TO CART',
+              <%= link_to 'ADD TO CART',
                     cart_items_path,
                     remote: true,
                     data: { method: :post, id: @product.id },
                     class: "add-cart item-add add-to-cart-link",
-                    id: "productAdd"
+                    id: "productAdd" %>
+                    <%#
                 # button_to "ADD TO CART",
                 #         cart_items_path,
                 #         remote: true,
@@ -173,7 +177,7 @@
                         <%= button_to cart_items_path(product_id: related.id) do %>
                           <i></i>
                         <% end %>
-                        <!--<a class="item_add add-to-cart-link" href="cart/add?id=<%=related.id %>" data-id="<%=related.id %>"><i></i></a>-->
+                        <a class="item_add add-to-cart-link" href="cart/add?id=<%=related.id %>" data-id="<%=related.id %>"><i></i></a>
                         <span class=" item_price">$ <%= related.price %></span>
                         <% if related.old_price %>
                           <del><%= related.old_price %></del>
@@ -285,3 +289,106 @@
 </div>
 <!--end-single-->
 <input type="hidden" value="<%= !current_user.nil? ? 88 : 99 %>" id="cart_access" />
+<script type="text/javascript">
+  $.ajaxSetup({
+    headers: {
+      'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+    }
+  });
+
+  $('body').on('click', '.add-to-cart-link', function(e) {
+    e.preventDefault();
+    var product_id = $(this).data('id'),
+        quantity = $('.quantity input').val() ? $('.quantity input').val() : 1,
+        mod = $('.available select').val(),
+        access = $('#cart_access').val();
+
+    if (access == 99) {
+      showCartEmpty();
+      return false
+    }
+
+    $.ajax({
+      beforeSend: function(xhr) { xhr.setRequestHeader('X-CSRF-Token',
+        $('meta[name="csrf-token"]').attr('content'))},
+      url: "/cart_items",
+      //url: $(this).attr('href'),
+      data: { product_id: product_id, quantity: quantity, mod: mod },
+      type: 'POST',
+      success: function(res) {
+        showCart(res)
+      },
+      error: function() {
+        alert('Error! Try later!');
+      },
+    });
+  });
+
+  $('#cart .modal-body').on('click', '.del-item', function() {
+    var id = $(this).data('id');
+    $.ajax({
+      beforeSend: function(xhr) { xhr.setRequestHeader('X-CSRF-Token',
+          $('meta[name="csrf-token"]').attr('content'))},
+      url: "/cart/items/"+id,
+      data: { id: id },
+      method: 'delete',
+      type: 'POST',
+      success: function(res) {
+        showCart(res);
+      },
+      error: function() {
+        alert('Error!');
+      }
+    });
+  });
+
+  function showCart(cart) {
+    if ($.trim(cart) == '<td>Cart is Empty</td>') {
+      $('#cart .modal-footer a, #cart .modal-footer .btn-danger').css('display', 'none');
+    } else {
+      $('#cart .modal-footer a, #cart .modal-footer .btn-danger').css('display', 'inline-block');
+    }
+    $('#cart .modal-body').html(cart);
+    $('#cart').modal();
+    if ($('.cart-sum').text()) {
+      $('.simpleCart_total').html($('#cart .cart-sum').text());
+    } else {
+      $('.simpleCart_total').text('Empty Cart');
+    }
+  }
+
+  function getCart() {
+    $.ajax({
+      url: '/cart',
+      type: 'GET',
+      success: function(res) {
+        showCart(res)
+      },
+      error: function() {
+        alert('Error! Try later!');
+      }
+    });
+  }
+
+  function showCartEmpty() {
+    var result = { error: 'Please sign in to view the cart.' }
+    var modal = $('#cart').modal();
+    $('#cart .modal-footer a, #cart .modal-footer .btn-danger').css('display', 'none');
+    modal.find('.modal-body').html(result.error);
+  }
+
+  function clearCart() {
+    $.ajax({
+      url: '/cart/',
+      method: 'delete',
+      type: 'POST',
+      success: function(res) {
+        showCart(res)
+      },
+      error: function() {
+        alert('Error!');
+      },
+    });
+  }
+
+</script>
