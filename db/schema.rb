@@ -63,6 +63,13 @@ ActiveRecord::Schema.define(version: 2020_01_11_110055) do
     t.integer "status"
     t.string "keywords"
     t.string "description"
+    t.string "dimensions"
+    t.string "weight"
+    t.string "os"
+    t.string "processor"
+    t.string "main_cam"
+    t.string "front_cam"
+    t.string "battery"
     t.string "img", default: "no_image.jpg"
     t.integer "hit", default: 0
     t.datetime "created_at", precision: 6, null: false
