@@ -3,11 +3,11 @@ class ItemsController < ApplicationController
   layout false
 
   def create
-    cart_items.create(item_params)
+    @cart.cart_items.create(item_params)
   end
 
   def destroy
-    cart_items.find_by(item_params).destroy
+    @cart.cart_items.find_by(item_params).destroy
     render :create
   end
 

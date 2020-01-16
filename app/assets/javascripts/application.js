@@ -18,7 +18,6 @@
 //= require flexs
 //= require my
 //= require jquery
-//= require jquery_ujs
 //= require_tree .
 
 
