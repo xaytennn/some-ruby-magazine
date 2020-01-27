@@ -1,13 +1,4 @@
 
-<div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">x</span></button>
-        <h4 class="modal-title" id="myModalLabel">Cart</h4>
-      </div>
-      <div class="modal-body">
 <% unless current_user.nil? %>
   <% if !products.empty? %>
     <div class="table-responsive">
@@ -39,7 +30,7 @@
           </td>
           <% pr = item.quantity * item.product.price %>
           <% sum << pr %>
-          <td><%= item.product.price %></td>
+          <td><%= number_to_currency(item.product.price) %></td>
           <td>
             <span data-id="<%= item.product_id %>" class="glyphicon glyphicon-remove text-danger del-item" aria-hidden="true"></span>
           </td>
@@ -51,7 +42,7 @@
         </tr>
         <tr>
           <td>For the amount:</td>
-          <td colspan="4" class="text-right cart-sum"><%= format("%.2f", sum.sum) %> $</td>
+          <td colspan="4" class="text-right cart-sum"><%= number_to_currency(format("%.2f", sum.sum)) %> $</td>
         </tr>
 
         </tbody>
@@ -64,13 +55,3 @@
   <span>Please sign in to view the cart.</span>
   <script>$('#cart .modal-footer a, #cart .modal-footer .btn-danger').css('display', 'none');</script>
 <% end %>
-
-</div>
-<div class="modal-footer">
-  <button type="button" class="btn btn-default" data-dismiss="modal">Continue shopping</button>
-  <a href="cart/index" type="button" class="btn btn-primary">Checkout order</a>
-  <button type="button" class="btn btn-danger" onclick="clearCart()">Clear cart</button>
-</div>
-</div>
-</div>
-</div>

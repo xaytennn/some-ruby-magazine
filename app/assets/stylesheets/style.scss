@@ -211,12 +211,17 @@ span.simpleCart_total {
 	-moz-user-select: none;
 	user-select: none;
 }
+//.dropdown .selected {color: #000;}
 .dropdown.open{
 	z-index: 2;
 }
+.dropdown {
+	background: #000;
+	color: #000;
+}
 .dropdown:hover,
 .dropdown.focus{
-	background: #F7F7F7;
+	background: #000;
 	color: #000;
 }
 /* CARAT */
@@ -268,7 +273,7 @@ span.simpleCart_total {
 	top: 0;
 	width: 100%;
 	height: 100%;
-	// opacity: 0;
+	opacity: 100;
 }
 /* SELECTED FEEDBACK ITEM */
 .dropdown .selected, .dropdown li {

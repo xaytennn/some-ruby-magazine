@@ -52,7 +52,6 @@ $('body').on('click', '.add-to-cart-link', function(e) {
     data: { product_id: product_id, quantity: quantity, mod: mod },
     type: 'POST',
     success: function(res) {
-      alert('Success .add-to-cart-link');
       showCart(res);
     },
     error: function() {

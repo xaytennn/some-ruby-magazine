@@ -58,31 +58,11 @@
                 <div class="clearfix"> </div>
               </div>
 
-              <h5 class="item_price">$ <%= @product.price %> </h5>
+              <h5 class="item_price"><%= number_to_currency(@product.price) %> </h5>
               <% if @product.old_price %>
-                <del><%= @product.old_price %></del>
+                <del><%= number_to_currency(@product.old_price) %></del>
               <% end %>
               <p><%= @product.content %></p>
-              <div class="available">
-                <ul>
-                  <li>Color
-                    <select>
-                      <option>Silver</option>
-                      <option>Black</option>
-                      <option>Dark Black</option>
-                      <option>Red</option>
-                    </select>
-                  </li>
-                  <li class="size-in">Size
-                    <select>
-                      <option>Large</option>
-                      <option>Medium</option>
-                      <option>Small</option>
-                    </select>
-                  </li>
-                  <div class="clearfix"> </div>
-                </ul>
-              </div>
 
               <div class="quantity">
                 <input type="number" name="quantity" value="1" size="4" min="1" max="99" step="1">
@@ -95,12 +75,6 @@
                     data: { method: :post, id: @product.id },
                     class: "add-cart item-add add-to-cart-link",
                     id: "productAdd"
-                # button_to "ADD TO CART",
-                #         cart_items_path,
-                #         remote: true,
-                #         data: { method: :post, id: @product.id },
-                #         class: "add-cart item-add add-to-cart-link",
-                #         id: "productAdd"
               %>
 
             </div>
@@ -148,14 +122,9 @@
                       <h3><a href="<%= related.id %>"><%= related.title %></a></h3>
 
                       <h4>
-
-                        <%= button_to cart_items_path(product_id: related.id) do %>
-                          <i></i>
-                        <% end %>
-                        <!--<a class="item_add add-to-cart-link" href="cart/add?id=<%=related.id %>" data-id="<%=related.id %>"><i></i></a>-->
-                        <span class=" item_price">$ <%= related.price %></span>
+                        <span class=" item_price"><%= number_to_currency(related.price) %></span>
                         <% if related.old_price %>
-                          <del><%= related.old_price %></del>
+                          <small><del><%= number_to_currency(related.old_price) %></del></small>
                         <% end %>
                       </h4>
                     </div>
@@ -186,14 +155,9 @@
                       <h3><a href="<%= recently.id %>"><%= recently.title %></a></h3>
 
                       <h4>
-
-                        <%= button_to cart_items_path(product_id: recently.id) do %>
-                          <i></i>
-                        <% end %>
-                        <!--<a class="item-add add-to-cart-link" href="cart/add?id=<%=recently.id %>" data-id="<%=recently.id %>"><i></i></a>-->
-                        <span class=" item_price">$ <%= recently.price %></span>
+                        <span class=" item_price"><%= number_to_currency(recently.price) %></span>
                         <% if recently.old_price %>
-                          <del><%= recently.old_price %></del>
+                          <small><del><%= number_to_currency(recently.old_price) %></del></small>
                         <% end %>
                       </h4>
                     </div>
@@ -234,27 +198,16 @@
                 <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Apple</label>
               </div>
               <div class="col col-4">
-                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Huawei</label>
                 <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Xiaomi</label>
+                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Huawei</label>
+                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>ZTE</label>
+                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>BlackBerry</label>
+                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Motorolla</label>
                 <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>TeXet</label>
+                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>YotaPhone</label>
+                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Highscreen</label>
               </div>
             </div>
-          </section>
-
-          <section class="sky-form">
-            <h4>Color</h4>
-            <ul class="w_nav2">
-              <li><a class="color1" href="#"></a></li>
-              <li><a class="color2" href="#"></a></li>
-              <li><a class="color3" href="#"></a></li>
-              <li><a class="color4" href="#"></a></li>
-              <li><a class="color5" href="#"></a></li>
-              <li><a class="color6" href="#"></a></li>
-              <li><a class="color7" href="#"></a></li>
-              <li><a class="color8" href="#"></a></li>
-              <li><a class="color9" href="#"></a></li>
-              <li><a class="color10" href="#"></a></li>
-            </ul>
           </section>
         </div>
       </div>

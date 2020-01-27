@@ -4,18 +4,13 @@
       <div class="col-md-6 top-header-left">
         <div class="drop">
           <div class="box">
-            <select tabindex="3" class="dropdown"> <!-- drop-->
+            <select tabindex="1" class="dropdown"> <!-- drop-->
               <option value="1" class="">Dollar</option>
-              <option value="2" class="">Euro</option>
-              <option value="3" class="">Ruble</option>
             </select>
           </div>
           <div class="box1">
-            <select tabindex="4" class="dropdown">
+            <select tabindex="1" class="dropdown">
               <option value="1" class="">English</option>
-              <option value="2" class="">Russian</option>
-              <option value="3" class="">French</option>
-              <option value="4" class="">German</option>
             </select>
           </div>
           <div class="btn-group">
@@ -23,8 +18,8 @@
             <ul class="dropdown-menu">
               <% if user_signed_in? %>
                 <% if current_user.try(:admin?) %>
-                  <li><%= link_to 'administrator', '#', style: "color: red" %></li>
-                  <li><%= link_to 'API', '/oauth/applications', style: "color: blue" %></li>
+                  <li><%= link_to 'administrator', '#', style: "color: red; text-align: center;" %></li>
+                  <li><%= link_to 'API', '/oauth/applications', style: "color: blue; text-align: center;" %></li>
                 <% end %>
 
                 <li><a href="#">Welcome, <%= current_user.email %></a></li>
@@ -48,7 +43,7 @@
               <%= image_tag('cart-1.png', alt: "") %>
               <% if cart_items.any?  %>
                 <span class="simpleCart_total">
-                  <%= format("%.2f", cart_total) %> $
+                  <%= number_to_currency(format("%.2f", cart_total)) %>
                 </span>
               <% else %>
                 <span class="simpleCart_total">Empty cart</span>

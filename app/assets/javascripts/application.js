@@ -3,22 +3,20 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-//= require rails-ujs
+//= require jquery
 //= require jquery-1.11.0.min
+//= require jquery.flexslider
+//= require jquery.easydropdown
+//= require mem
+//= require memenu
 //= require bootstrap.min
 //= require typeahead.bundle
-//= require jquery.easydropdown
 //= require easydrop
-//= require memenu
-//= require mem
 //= require responsiveslides.min
 //= require responsive
 //= require imagezoom
-//= require jquery.flexslider
 //= require flexs
 //= require my
-//= require jquery
-//= require jquery_ujs
 //= require_tree .
 
 

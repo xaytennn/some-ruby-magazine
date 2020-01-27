@@ -63,7 +63,6 @@
                   <h3><a href="product/<%=hit.id %>"><%=hit.title %></a> </h3>
                   <h4>
                     <%= link_to 'cart', class: 'add-to-cart-link', data: {id: hit.id} do %>
-                    <%#= button_to cart_items_path(product_id: hit.id) do %>
                       <i></i>
                     <% end %>
                     <span class=" item_price"><%= number_to_currency(hit.price) %></span>

@@ -1,44 +1,41 @@
 # frozen_string_literal: true
 
-require 'faker'
-
-
 # table brands
 brand_attributes = [{
                         title: 'Xiaomi', bytitle: 'xiaomi',
-                        img: 'abt-1.jpg', description: 'China' #Faker::Superhero.name
+                        img: 'abt-1.jpg', description: 'China'
                     },
                     {
                         title: 'Huawei', bytitle: 'huawei',
-                        img: 'abt-3.jpg', description: 'China' #Faker::Superhero.name
+                        img: 'abt-3.jpg', description: 'China'
                     },
                     {
                         title: 'Apple', bytitle: 'apple',
-                        img: 'abt-2.jpg', description: 'USA' #Faker::Superhero.name
+                        img: 'abt-2.jpg', description: 'USA'
                     },
                     {
                         title: 'TeXet', bytitle: 'texet',
-                        img: '', description: 'Russia' #Faker::Superhero.name
+                        img: '', description: 'Russia'
                     },
                     {
                         title: 'ZTE', bytitle: 'zte',
-                        img: '', description: 'China' #Faker::Superhero.name
+                        img: '', description: 'China'
                     },
                     {
                         title: 'BlackBerry', bytitle: 'blackberry',
-                        img: '', description: 'USA' #Faker::Superhero.name
+                        img: '', description: 'USA'
                     },
                     {
                         title: 'Motorola', bytitle: 'motorola',
-                        img: '', description: 'USA' #Faker::Superhero.name
+                        img: '', description: 'USA'
                     },
                     {
                         title: 'YotaPhone', bytitle: 'yotaphone',
-                        img: '', description: 'Russia' #Faker::Superhero.name
+                        img: '', description: 'Russia'
                     },
                     {
                         title: 'Highscreen', bytitle: 'highscreen',
-                        img: '', description: 'Russia' #Faker::Superhero.name
+                        img: '', description: 'Russia'
                     }]
 
 brand_attributes.each do |attr|

@@ -10,6 +10,8 @@ gem 'simple_form'
 gem 'breadcrumbs_on_rails'
 gem 'meta-tags'
 gem 'sqlite3', '~> 1.4'
+#gem 'mysql2'
+#gem 'pg', '~> 1.1'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'webpacker', '~> 4.0'
@@ -43,11 +45,6 @@ group :development, :test do
   gem 'rspec-mocks', git: 'https://github.com/rspec/rspec-mocks', branch: 'master'
   gem 'rspec-expectations', git: 'https://github.com/rspec/rspec-expectations', branch: 'master'
   gem 'rspec-support', git: 'https://github.com/rspec/rspec-support', branch: 'master'
-  # gem 'rspec'
-  # gem 'rspec-core'
-  # gem 'rspec-mocks'
-  # gem 'rspec-support'
-  # gem 'rspec-expectations'
 
   gem 'database_cleaner'
   gem 'factory_bot'

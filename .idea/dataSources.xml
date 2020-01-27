@@ -1,25 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="cat_shop_development@localhost" uuid="b39dc625-39cb-420c-8836-b4b1184cb5ab">
+    <data-source source="LOCAL" name="development@localhost" uuid="ccbf2c40-c480-46d1-8c39-742233a668b5">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/cat_shop_development</jdbc-url>
+      <jdbc-url>jdbc:postgresql://localhost:5432/development</jdbc-url>
     </data-source>
-    <data-source source="LOCAL" name="PostgreSQL - cat_shop_test@localhost" uuid="34c8a771-dec6-4921-9cb9-2c634bc5dc12">
+    <data-source source="LOCAL" name="test@localhost" uuid="fae77b48-a532-460b-a459-f95385f2455f">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/cat_shop_test</jdbc-url>
-    </data-source>
-    <data-source source="LOCAL" name="Rails some-ruby-magazine: development" uuid="43ff6df9-ada2-46e1-9909-412ad1b99bdd">
-      <driver-ref>sqlite.xerial</driver-ref>
-      <synchronize>true</synchronize>
-      <imported>true</imported>
-      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
-      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/development.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:postgresql://localhost:5432/test</jdbc-url>
     </data-source>
     <data-source source="LOCAL" name="Rails some-ruby-magazine: test" uuid="8fdef7d0-0338-4671-a27a-a15d5ccf740e">
       <driver-ref>sqlite.xerial</driver-ref>
@@ -28,6 +20,14 @@
       <remarks>$PROJECT_DIR$/config/database.yml</remarks>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:C:\Users\gaynu\Documents\GitHub\some-ruby-magazine-3\db\test.sqlite3</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails some-ruby-magazine: development" uuid="43ff6df9-ada2-46e1-9909-412ad1b99bdd">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/development.sqlite3</jdbc-url>
     </data-source>
   </component>
 </project>
